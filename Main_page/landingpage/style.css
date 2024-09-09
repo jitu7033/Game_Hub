@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+    box-sizing: border-box;
+}
+body{
+    /* height: 100vh; */
+    width: 100%;
+    background-color: rgb(168, 105, 63);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+li{
+
+    list-style: none;
+    cursor: pointer;
+}
+nav{
+    /* margin-top: 20px; */
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+nav .logo{
+    font-weight: 700;
+    font-size: 30px;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-weight: 500;
+    font-size: larger;
+}
+
+nav ul li:hover{
+    text-decoration: underline;
+    font-weight: 900;
+    color: red;
+}
+
+.search-field{
+    padding: 20px;
+    display: flex;
+    gap: 30px;
+}
+input{
+    padding: 4px 10px ;
+}
+
+button{
+    background-color:#3FE081;
+    cursor: pointer;
+    padding: 12px 15px;
+    color: black;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-weight: 600;
+    width: fit-content;
+}
+
+button:hover{
+    color: black;
+    padding: 10px 15px;
+    border: 1px solid black;
+}
+
+/* hero section  */
+
+.hero{
+    margin-top: 20px;
+    border: 1px solid green;
+}
+.container{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* gap: 10px; */
+    /* height: 40px; */
+}
+.box{
+    display: flex;
+    margin: 20px;
+    /* background-color: pink; */
+    width: 30%;
+    height: 40vh;
+}
+.box img
+{
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#tic-tac-toe
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#game1
+{
+   position: absolute;
+}
