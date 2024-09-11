@@ -71,6 +71,9 @@ body{
     border: 2px solid #000;
     cursor: pointer;
 }
+.box:hover{
+    background-color: #FF2E63;
+}
 
 #play-again{
     background-color: #FF2E63;
@@ -79,10 +82,26 @@ body{
     font-size: 1.2rem;
     border-radius: 5px ;
     cursor: pointer;
+    display: none;
 }
 
 #play-again:hover{
     padding: 10px 40px;
     background-color: #08D9D6;
     color: #000;
+}
+
+#reset-game{
+    background-color: #FF2E63;
+    padding: 10px 25px;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+#reset-game:hover{
+    padding: 10px 40px;
+    background-color: red;
+    color: black;
 }
