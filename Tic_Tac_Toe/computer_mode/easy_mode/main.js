@@ -16,7 +16,11 @@ boxex.forEach(e => {
             checkDraw();
             if (!isGameOver) {
                 changeTurn();
-                computerMode(); // Trigger computer mode after player move
+                // freezeBoard(true); // disable plyer mode 
+               setTimeout(()=>{
+                computerMode();
+                // freezeBoard(false); // enable player mode 
+               },100)
             }
         }
     });
@@ -35,6 +39,7 @@ function checkWin(){
         if(v0 != "" && v0 === v1 && v0 === v2){
             isGameOver = true;
             document.querySelector("#result").innerHTML = turn + " Wins!";
+            // else document.querySelector("#result").innerHTML =  "Computer  Wins!";
             document.querySelector("#play-again").style.display = "inline";
             document.querySelector("#reset-game").style.display = "none";
             for(let j = 0; j < 3; j++){
@@ -81,24 +86,26 @@ function computerMode(){
 
     // Try to block or win
     let madeMove = false;
+    checkComputerWin();
     for (let i = 0; i < winCondition.length && !madeMove; i++) {
         let v0 = boxex[winCondition[i][0]].innerHTML;
         let v1 = boxex[winCondition[i][1]].innerHTML;
         let v2 = boxex[winCondition[i][2]].innerHTML;
-
         // If two spots are filled with the same mark, fill the third
         if (v0 === v1 && v0 !== "" && v2 === "") {
             boxex[winCondition[i][2]].innerHTML = turn;
+            changeTurn();
             madeMove = true;
         } else if (v0 === v2 && v0 !== "" && v1 === "") {
             boxex[winCondition[i][1]].innerHTML = turn;
             madeMove = true;
+            changeTurn();
         } else if (v1 === v2 && v1 !== "" && v0 === "") {
             boxex[winCondition[i][0]].innerHTML = turn;
             madeMove = true;
+            changeTurn();
         }
     }
-
     // If no winning or blocking move was made, pick a random available spot
     if (!madeMove) {
         let available = [];
@@ -110,11 +117,12 @@ function computerMode(){
         if (available.length > 0) {
             let randomMove = available[Math.floor(Math.random() * available.length)];
             boxex[randomMove].innerHTML = turn;
+            changeTurn();
         }
     }
     checkWin();
     checkDraw();
-    if (!isGameOver) changeTurn();
+    // if (!isGameOver) changeTurn();
 }
 
 document.querySelector("#play-again").addEventListener("click",()=>{
@@ -137,3 +145,42 @@ function resetGame(){
         e.style.removeProperty("background-color");
     });
 }
+
+function checkComputerWin(){
+    let winCondition = [
+        [0,1,2],[3,4,5],[6,7,8],
+        [0,3,6],[1,4,7],[2,5,8],
+        [0,4,8],[2,4,6]
+    ];
+
+    for(let i = 0; i < winCondition.length; i++){
+        let v0 = boxex[winCondition[i][0]].innerHTML;
+        let v1 = boxex[winCondition[i][1]].innerHTML;
+        let v2 = boxex[winCondition[i][2]].innerHTML;
+
+        if(v0 != ""  && v0 === "0"){
+            if(v1 === v0 && v2 === ""){
+                boxex[winCondition[i][2]].innerHTML = turn;
+                changeTurn();
+                checkWin();
+                return true;
+            }
+            else if(v2 === v0 && v1 === ""){
+                boxex[winCondition[i][1]].innerHTML = turn;
+                changeTurn();
+                checkWin();
+                return true;
+            }
+        }
+        else if(v1 != "" && v1 === "0"){
+           if(v1 === v2 && v0 === ""){
+            boxex[winCondition[i][0]].innerHTML = turn;
+            changeTurn();
+            checkWin();
+            return true;
+           }
+        }
+        
+    }
+}
+
