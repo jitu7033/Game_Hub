@@ -56,6 +56,7 @@ function checkDraw(){
     }
 }
 
+
 function changeTurn(){
     if(turn == "X"){
         turn  = "0";
