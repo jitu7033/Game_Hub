@@ -1,12 +1,13 @@
 *{
-    color: white;
     font-family: sans-serif;
     transition: 0.2s ease-in-out;
     user-select: none;
 }
 
 body{
-    background-color: #252A34;
+    background-color:#50c878;
+    background-color: #734C3F;
+    background:  #F4FDFF;
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -18,7 +19,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .turn-container{
@@ -36,7 +38,6 @@ body{
     grid-column-start: 1;
     grid-column-end: 3;
 }
-
 .turn-container .turn-box{
     border: 3px solid #000;
     font-size: 1.6rem;
