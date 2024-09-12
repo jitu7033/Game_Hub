@@ -2,28 +2,57 @@ let boxex = document.querySelectorAll(".box");
 
 let turn  = "X";
 let isGameOver = false;
+let x_count = 0;
+let O_count = 0;
+this.queueX = [];
+this.queueO = [];
+
 
 if (!isGameOver) {
     document.querySelector("#reset-game").style.display = "inline";
 }
 
-boxex.forEach(e => {
+boxex.forEach((e,index) => {
     e.innerHTML = ""; // Clear all the boxes initially
     e.addEventListener("click", () => {
         if (!isGameOver && e.innerHTML === "") {
             e.innerHTML = turn;
+            // boxex[index].innerHTML = turn;
+            this.queueX.push(index);
             checkWin();
+            removeXO();
             checkDraw();
             if (!isGameOver) {
                 changeTurn();
                 setTimeout(() => {
                     computerMode();
+                    // this.queueO.push(index);
                 }, 100); // Delay computer move for 1 second
             }
         }
     });
 });
-
+// if x > 2 and no win then remove first x and O > 2 and no win then first O remove 
+function removeXO(){
+    if(this.queueX.length == 3){
+        checkWin();
+        if(!isGameOver){
+            let index = this.queueX[0];
+            this.queueX.shift();
+            boxex[index].innerHTML = "";
+        }
+    }
+    if(this.queueO.length == 3){
+        checkWin();
+        if(!isGameOver){
+            let index = this.queueO[0];
+            this.queueO.shift();
+            boxex[index].innerHTML = "";
+        }
+    }
+    console.log(queueO.length);
+    console.log(queueX.length);
+}
 function checkWin(){
     let winCondition = [
         [0,1,2],[3,4,5],[6,7,8],
@@ -92,12 +121,15 @@ function computerMode(){
             // If two spots are filled with the same mark, fill the third
             if (v0 === v1 && v0 !== "" && v2 === "") {
                 boxex[winCondition[i][2]].innerHTML = turn;
+                this.queueO.push(winCondition[i][2]);
                 madeMove = true;
             } else if (v0 === v2 && v0 !== "" && v1 === "") {
                 boxex[winCondition[i][1]].innerHTML = turn;
+                this.queueO.push(winCondition[i][1]);
                 madeMove = true;
             } else if (v1 === v2 && v1 !== "" && v0 === "") {
                 boxex[winCondition[i][0]].innerHTML = turn;
+                this.queueO.push(winCondition[i][0]);
                 madeMove = true;
             }
         }
@@ -112,11 +144,14 @@ function computerMode(){
             if (available.length > 0) {
                 let randomMove = available[Math.floor(Math.random() * available.length)];
                 boxex[randomMove].innerHTML = turn;
+                this.queueO.push(randomMove);
+               
             }
         }
         checkWin();
         checkDraw();
         if (!isGameOver) {
+            removeXO();
             changeTurn();
         }
     }
@@ -141,6 +176,8 @@ function resetGame(){
         e.innerHTML = "";
         e.style.removeProperty("background-color");
     });
+    queueO.length = 0;
+    queueX.length = 0;
 }
 
 function checkComputerWin(){
@@ -174,3 +211,4 @@ function checkComputerWin(){
         }
     }
 }
+
