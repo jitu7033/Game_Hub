@@ -26,12 +26,13 @@ boxex.forEach((e,index) => {
                 changeTurn();
                 setTimeout(() => {
                     computerMode();
-                    // this.queueO.push(index);
-                }, 100); // Delay computer move for 1 second
+                    // this.queueO.push(index); // debug();
+                }, 1000); // Delay computer move for 1 second
             }
         }
     });
 });
+
 // if x > 2 and no win then remove first x and O > 2 and no win then first O remove 
 function removeXO(){
     if(this.queueX.length == 3){
@@ -50,8 +51,8 @@ function removeXO(){
             boxex[index].innerHTML = "";
         }
     }
-    console.log(queueO.length);
-    console.log(queueX.length);
+    // console.log(queueO.length); // debug() 
+    // console.log(queueX.length); // debug();
 }
 function checkWin(){
     let winCondition = [
