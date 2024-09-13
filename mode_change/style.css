@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #1e202a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #f4f4f9;
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+    background-color: #252a34;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 3rem;
+    color: #06d6a0;
+}
+
+.mode-selection {
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.mode-btn, .sub-mode-btn {
+    background-color: #ef476f;
+    color: #f4f4f9;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+.mode-btn:hover, .sub-mode-btn:hover {
+    background-color: #d62828;
+}
+
+.mode-btn:focus, .sub-mode-btn:focus {
+    outline: none;
+}
+
+/* Sub-options should be indented */
+.sub-options {
+    margin-top: 10px;
+}
+
+.sub-mode-btn {
+    font-size: 1rem;
+    padding: 8px 15px;
+    background-color: #06d6a0;
+}
+
+.sub-mode-btn:hover {
+    background-color: #118ab2;
+}
