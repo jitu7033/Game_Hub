@@ -2,7 +2,7 @@
 
 
 document.getElementById("game1").addEventListener("click",function(){
-    window.location.href = 'http://127.0.0.1:5500/mode_change/home.html';
+    window.location.href = 'http://127.0.0.1:5500/Tic_Tac_Toe/mode_change/home.html';
 })
 function searchGame() {
     const query = document.getElementById('searchInput').value.toLowerCase();
