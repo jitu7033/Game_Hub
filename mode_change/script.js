@@ -12,18 +12,18 @@ document.getElementById('computer-mode-btn').addEventListener('click', function(
 
 // Redirect to appropriate User vs User mode
 document.getElementById('user-easy-mode').addEventListener('click', function() {
-    window.location.href = 'http://127.0.0.1:5500/Tic_Tac_Toe/user_mode/easy_mode/index.html';
+    window.location.href = 'http://127.0.0.1:5500/mode_change/Tic_Tac_Toe/user_mode/easy_mode/index.html';
 });
 
 document.getElementById('user-hard-mode').addEventListener('click', function() {
-    window.location.href = 'http://127.0.0.1:5500/Tic_Tac_Toe/user_mode/hard_mode/index.html';
+    window.location.href = 'http://127.0.0.1:5500/mode_change/Tic_Tac_Toe/user_mode/hard_mode/index.html';
 });
 
 // Redirect to appropriate User vs Computer mode
 document.getElementById('computer-easy-mode').addEventListener('click', function() {
-    window.location.href = 'http://127.0.0.1:5500/Tic_Tac_Toe/computer_mode/easy_mode/index.html';
+    window.location.href = 'http://127.0.0.1:5500/mode_change/Tic_Tac_Toe/computer_mode/easy_mode/index.html';
 });
 
 document.getElementById('computer-hard-mode').addEventListener('click', function() {
-    window.location.href = 'http://127.0.0.1:5500/Tic_Tac_Toe/computer_mode/hard_mode/index.html';
+    window.location.href = 'http://127.0.0.1:5500/mode_change/Tic_Tac_Toe/computer_mode/hard_mode/index.html';
 });
