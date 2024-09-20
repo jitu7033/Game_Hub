@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #181818; /* Dark background for full mode */
+    color: #fff; /* Light text color */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #282c34;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    color: #61dafb;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: rgba(97, 218, 251, 0.2);
+    border-radius: 5px;
+}
+
+#authSection {
+    display: flex;
+    align-items: center;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #61dafb;
+    color: #fff; /* White text for buttons */
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: #21a1f1;
+}
+
+#main {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1; /* Allow main to grow */
+}
+
+.game-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.game {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.game-image {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    border-radius: 5px;
+}
+
+.game:hover {
+    transform: translateY(-5px);
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #282c34;
+    color: #fff;
+}
+
+.game {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Login and Registration Form Styles */
+form {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #61dafb;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+}
+
+form input::placeholder {
+    color: #bbb; /* Placeholder color */
+}
+
+form button {
+    width: 100%;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

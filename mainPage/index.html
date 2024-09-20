@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Game Landing Page</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>Game Hub</h1>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <div id="authSection">
+               
+                <button id="loginBtn" onclick="window.open('login.html', '_blank');">Login</button>
+                <button id="logoutBtn" class="hidden">Logout</button>
+
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <div class="game-list">
+            <a href="../Tic_Tac_Toe/mode_change/home.html" class="game">
+                <video src="./video/Screencast from 2024-09-20 17-35-12.webm" autoplay muted loop class="game-image"></video>
+            </a>
+            <a href="../Dynasour_Game/src/index.html" class="game">
+                <video src="./video/Screencast from 2024-09-20 17-46-28.webm" autoplay muted loop class="game-image"></video>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Game Hub Created by : jitendra </p>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
